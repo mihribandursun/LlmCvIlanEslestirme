@@ -65,7 +65,7 @@ app.add_middleware(
 
 vector_store = None
 
-"""# --- Veri Yükleme ---
+# --- Veri Yükleme ---
 def load_and_index_jobs():
     global vector_store
     docs = []
@@ -111,9 +111,9 @@ def load_and_index_jobs():
         vector_store = FAISS.from_documents(docs, embeddings)
         print("✅ Vektör Deposu Hazır.")
     else:
-        print("⚠️ Hiç ilan bulunamadı.")"""
+        print("⚠️ Hiç ilan bulunamadı.")
 
-# --- Veri Yükleme (DÜZELTİLDİ) ---
+"""# --- Veri Yükleme  ---
 def load_and_index_jobs():
     global vector_store
     docs = []
@@ -144,14 +144,14 @@ def load_and_index_jobs():
         vector_store = FAISS.from_documents(docs, embeddings)
         print("✅ Vektör Deposu Hazır.")
     else:
-        print("⚠️ Hiç ilan bulunamadı. Lütfen JSON dosyasını kontrol edin.")
+        print("⚠️ Hiç ilan bulunamadı. Lütfen JSON dosyasını kontrol edin.")"""
 
 
 @app.on_event("startup")
 async def startup_event():
     load_and_index_jobs()
 
-# --- PROMPTLAR (GELİŞTİRİLMİŞ) ---
+# --- PROMPTLAR  ---
 validation_template = """
 You are a Document Classifier. Determine if the text below is a **Personal CV / Resume** or something else.
 
